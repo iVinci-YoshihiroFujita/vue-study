@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'my-nuxt-app',
+    title: 'Nuxt.jsのお勉強',
     htmlAttrs: {
       lang: 'en'
     },
@@ -18,6 +18,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/common.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -37,5 +38,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend: (config) => {
+      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
+
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: [
+          'vue-loader',
+          'vue-svg-loader',
+        ],
+      });
+    },
   }
 }
