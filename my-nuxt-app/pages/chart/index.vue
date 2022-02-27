@@ -28,20 +28,22 @@
 import IconBack from "~/assets/icons/icon_back.svg"
 import Bar from "~/components/Graph/Bar"
 import StackedBar from "~/components/Graph/StackedBar"
+import BarHighLight from "~/components/Graph/BarHighLight"
 
 export default {
   name: "ChartIndex",
   components: {
     IconBack,
     Bar,
-    StackedBar
+    StackedBar,
+    BarHighLight
   },
   data() {
     return {
       options: [
         { key: "Bar", label: "棒グラフ" },
         { key: "StackedBar", label: "積み上げ棒グラフ" },
-        { key: "HighLightOnClick", label: "クリック時にハイライトする棒グラフ" },
+        { key: "BarHighLight", label: "クリック時にハイライトする棒グラフ" },
         { key: "DashedBar", label: "波線で囲まれた棒グラフ" }
       ],
       selectedGraph: "Bar"

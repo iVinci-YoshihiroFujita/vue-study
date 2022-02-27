@@ -3,7 +3,7 @@
     <NuxtLogo />
     <section class="contents">
       <button
-        class="clickable contents-button"
+        class="clickable btn contents-button"
         @click.prevent="() => onClickContentsButton('/chart/')"
       >
         <span class="contents-button-label">Graph - Chart.js</span>

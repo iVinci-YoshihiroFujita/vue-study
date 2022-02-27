@@ -6,10 +6,11 @@ export default {
   extends: Bar,
   mixins: [reactiveProp],
   props: {
-    chartOptions: { type: Object, default: () => {} }
+    chartData: { type: Object, default: () => null },
+    options: { type: Object, default: () => null }
   },
   mounted() {
-    this.renderChart(this.chartData, this.chartOptions)
+    this.renderChart(this.chartData, this.options)
   }
 }
 </script>

@@ -1,28 +1,27 @@
 <template>
   <div>
     <div class="randomize">
-      <IconReload
-        class="clickable icon_40"
+      <button
+        class="btn clickable"
         @click.prevent="onClickRandomize"
-      />
-      <span>Re-Randomize</span>
+      >
+        <span class="ft_15">Randomize</span>
+      </button>
     </div>
     <BarChart
       :chartData="chartData"
-      :chartOptions="chartOptions"
+      :options="chartOptions"
     />
   </div>
 </template>
 
 <script>
 import BarChart from "~/components/Graph/BarChart"
-import IconReload from "~/assets/icons/icon_reload.svg"
 
 export default {
   name: "StackedBarGraph",
   components: {
-    BarChart,
-    IconReload
+    BarChart
   },
   data() {
     return {
@@ -33,7 +32,7 @@ export default {
   mounted() {
     const dataLength = Math.floor(Math.random() * 20 + 10)
     this.chartData = this.makeChartData(dataLength)
-    this.chartOptions = this.makeChartOptions(dataLength)
+    this.chartOptions = this.makeChartOptions()
   },
   methods: {
     makeChartData(dataLength) {
@@ -71,8 +70,7 @@ export default {
         ]
       }
     },
-    makeChartOptions(dataLength) {
-      console.log(dataLength)
+    makeChartOptions() {
       return {
         responsive: true,
         scales: {

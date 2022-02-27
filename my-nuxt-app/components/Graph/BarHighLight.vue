@@ -19,14 +19,36 @@
 import BarChart from "~/components/Graph/BarChart"
 
 export default {
-  name: "BarGraph",
+  name: "BarHighLight",
   components: {
     BarChart
   },
   data() {
     return {
       chartData: { type: Object, default: () => {} },
-      chartOptions: { type: Object, default: () => {} }
+      chartOptions: { type: Object, default: () => {} },
+      clickedIdx: null
+    }
+  },
+  watch: {
+    clickedIdx() {
+      const backgroundColors =
+        [...Array(this.chartData.datasets[0].data.length)].map((d, idx) => {
+          if (idx === this.clickedIdx) {
+            return "#FE2E2E"
+          } else {
+            return "#58ACFA"
+          }
+        })
+      this.chartData = {
+        ...this.chartData,
+        datasets: [
+          {
+            ...this.chartData.datasets[0],
+            backgroundColor: backgroundColors
+          }
+        ]
+      }
     }
   },
   mounted() {
@@ -55,13 +77,20 @@ export default {
     },
     makeChartOptions() {
       return {
-        responsive: true
+        responsive: true,
+        onClick: this.onClickBar
       }
     },
     onClickRandomize() {
       const dataLength = Math.floor(Math.random() * 20 + 10)
+      this.clickedIdx = null
       this.chartData = this.makeChartData(dataLength)
       this.chartOptions = this.makeChartOptions(dataLength)
+    },
+    onClickBar(event, elements) {
+      const index = elements[0]._index
+      console.log("index", index)
+      this.clickedIdx = index
     }
   }
 }

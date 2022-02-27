@@ -2,6 +2,21 @@
   cursor: pointer;
 }
 
+.btn {
+  border: 1px solid #adadad;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #95ccff;
+}
+
+.ft_15 { font-size: 15px; }
+.ft_16 { font-size: 16px; }
+.ft_17 { font-size: 17px; }
+.ft_18 { font-size: 18px; }
+.ft_19 { font-size: 19px; }
+.ft_20 { font-size: 20px; }
+
 .icon_30 { height: 30px; width: 30px }
 .icon_40 { height: 40px; width: 40px }
 .icon_50 { height: 50px; width: 50px }
