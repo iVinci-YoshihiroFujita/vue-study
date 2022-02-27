@@ -27,12 +27,14 @@
 <script>
 import IconBack from "~/assets/icons/icon_back.svg"
 import Bar from "~/components/Graph/Bar"
+import StackedBar from "~/components/Graph/StackedBar"
 
 export default {
   name: "ChartIndex",
   components: {
     IconBack,
-    Bar
+    Bar,
+    StackedBar
   },
   data() {
     return {
