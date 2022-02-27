@@ -1,8 +1,11 @@
 <template>
   <div class="contents-wrapper">
-    <Welcome />
+    <NuxtLogo />
     <section class="contents">
-      <button class="clickable contents-button" @click.prevent="() => onClickContentsButton('/chart/')">
+      <button
+        class="clickable contents-button"
+        @click.prevent="() => onClickContentsButton('/chart/')"
+      >
         <span class="contents-button-label">Graph - Chart.js</span>
       </button>
     </section>
@@ -10,16 +13,19 @@
 </template>
 
 <script>
+import NuxtLogo from "~/assets/icons/icon_nuxt_logo.svg"
+
 export default {
-  head() {
-    title: "Welcome";
+  name: "IndexHome",
+  components: {
+    NuxtLogo
   },
   methods: {
     onClickContentsButton(path) {
       this.$router.push(path)
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style>

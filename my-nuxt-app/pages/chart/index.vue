@@ -1,18 +1,49 @@
 <template>
   <div>
-    <iconBack class="clickable icon_40" @click="onBackClick" />
+    <IconBack
+      class="clickable icon_40"
+      @click="onBackClick"
+    />
+    <select
+      v-model="selectedGraph"
+      class="graph-select"
+    >
+      <option
+        v-for="(option, idx) in options"
+        :key="idx"
+        :value="option.key"
+      >
+        {{ option.label }}
+      </option>
+    </select>
+    <div class="main_contents">
+      <component
+        :is="selectedGraph"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import IconBack from "~/assets/icons/icon_back.svg"
+import Bar from "~/components/Graph/Bar"
 
 export default {
-  head() {
-    title: "Chart"
-  },
+  name: "ChartIndex",
   components: {
-    IconBack
+    IconBack,
+    Bar
+  },
+  data() {
+    return {
+      options: [
+        { key: "Bar", label: "棒グラフ" },
+        { key: "StackedBar", label: "積み上げ棒グラフ" },
+        { key: "HighLightOnClick", label: "クリック時にハイライトする棒グラフ" },
+        { key: "DashedBar", label: "波線で囲まれた棒グラフ" }
+      ],
+      selectedGraph: "Bar"
+    }
   },
   methods: {
     onBackClick() {
@@ -22,3 +53,9 @@ export default {
 }
 </script>
 
+<style>
+.graph-select {
+  padding: 3px;
+  border-radius: 5px;
+}
+</style>
