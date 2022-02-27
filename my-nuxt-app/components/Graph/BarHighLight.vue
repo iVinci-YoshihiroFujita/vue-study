@@ -78,6 +78,7 @@ export default {
     makeChartOptions() {
       return {
         responsive: true,
+        maintainAspectRatio: false,
         onClick: this.onClickBar
       }
     },
@@ -88,8 +89,8 @@ export default {
       this.chartOptions = this.makeChartOptions(dataLength)
     },
     onClickBar(event, elements) {
+      if (elements.length === 0) return
       const index = elements[0]._index
-      console.log("index", index)
       this.clickedIdx = index
     }
   }

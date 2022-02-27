@@ -55,7 +55,8 @@ export default {
     },
     makeChartOptions() {
       return {
-        responsive: true
+        responsive: true,
+        maintainAspectRatio: false
       }
     },
     onClickRandomize() {

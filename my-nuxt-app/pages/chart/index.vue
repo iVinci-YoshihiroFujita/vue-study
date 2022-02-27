@@ -44,6 +44,7 @@ export default {
         { key: "Bar", label: "棒グラフ" },
         { key: "StackedBar", label: "積み上げ棒グラフ" },
         { key: "BarHighLight", label: "クリック時にハイライトする棒グラフ" },
+        { key: "BarBackgroundPainted", label: "特定の範囲の背景が塗られている棒グラフ" },
         { key: "DashedBar", label: "波線で囲まれた棒グラフ" }
       ],
       selectedGraph: "Bar"

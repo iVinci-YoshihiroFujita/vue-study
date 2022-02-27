@@ -73,6 +73,7 @@ export default {
     makeChartOptions() {
       return {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           xAxes: [
             {
