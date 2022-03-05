@@ -29,6 +29,7 @@ import IconBack from "~/assets/icons/icon_back.svg"
 import Bar from "~/components/Graph/Bar"
 import StackedBar from "~/components/Graph/StackedBar"
 import BarHighLight from "~/components/Graph/BarHighLight"
+import BarBackgroundPainted from "~/components/Graph/BarBackgroundPainted"
 
 export default {
   name: "ChartIndex",
@@ -36,7 +37,8 @@ export default {
     IconBack,
     Bar,
     StackedBar,
-    BarHighLight
+    BarHighLight,
+    BarBackgroundPainted
   },
   data() {
     return {
