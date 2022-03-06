@@ -30,6 +30,7 @@ import Bar from "~/components/Graph/Bar"
 import StackedBar from "~/components/Graph/StackedBar"
 import BarHighLight from "~/components/Graph/BarHighLight"
 import BarBackgroundPainted from "~/components/Graph/BarBackgroundPainted"
+import DashedBar from "~/components/Graph/BarDashedBorder"
 
 export default {
   name: "ChartIndex",
@@ -38,7 +39,8 @@ export default {
     Bar,
     StackedBar,
     BarHighLight,
-    BarBackgroundPainted
+    BarBackgroundPainted,
+    DashedBar
   },
   data() {
     return {
