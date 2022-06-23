@@ -12,6 +12,12 @@
       :chartData="chartData"
       :options="chartOptions"
     />
+    <button
+      class="btn clickable"
+      @click.prevent="onClickColorChange"
+    >
+      <span class="ft_15 color-change">色変更</span>
+    </button>
   </div>
 </template>
 
@@ -27,28 +33,20 @@ export default {
     return {
       chartData: { type: Object, default: () => {} },
       chartOptions: { type: Object, default: () => {} },
-      clickedIdx: null
+      clickedIdx: null,
+      basicBarColor: "#58ACFA",
+      clickedBarColor: "#FE2E2E"
     }
   },
   watch: {
     clickedIdx() {
-      const backgroundColors =
-        [...Array(this.chartData.datasets[0].data.length)].map((d, idx) => {
-          if (idx === this.clickedIdx) {
-            return "#FE2E2E"
-          } else {
-            return "#58ACFA"
-          }
-        })
-      this.chartData = {
-        ...this.chartData,
-        datasets: [
-          {
-            ...this.chartData.datasets[0],
-            backgroundColor: backgroundColors
-          }
-        ]
-      }
+      this.setBarColor()
+    },
+    basicBarColor() {
+      this.setBarColor()
+    },
+    clickedBarColor() {
+      this.setBarColor()
     }
   },
   mounted() {
@@ -92,6 +90,39 @@ export default {
       if (elements.length === 0) return
       const index = elements[0]._index
       this.clickedIdx = index
+    },
+    onClickColorChange() {
+      const [br, bg, bb] = [
+        Math.ceil(Math.random() * 255),
+        Math.ceil(Math.random() * 255),
+        Math.ceil(Math.random() * 255)
+      ]
+      const [cr, cg, cb] = [
+        Math.ceil(Math.random() * 255),
+        Math.ceil(Math.random() * 255),
+        Math.ceil(Math.random() * 255)
+      ]
+      this.basicBarColor = `rgb(${br}, ${bg}, ${bb})`
+      this.clickedBarColor = `rgb(${cr}, ${cg}, ${cb})`
+    },
+    setBarColor() {
+      const backgroundColors =
+        [...Array(this.chartData.datasets[0].data.length)].map((d, idx) => {
+          if (idx === this.clickedIdx) {
+            return this.clickedBarColor
+          } else {
+            return this.basicBarColor
+          }
+        })
+      this.chartData = {
+        ...this.chartData,
+        datasets: [
+          {
+            ...this.chartData.datasets[0],
+            backgroundColor: backgroundColors
+          }
+        ]
+      }
     }
   }
 }
