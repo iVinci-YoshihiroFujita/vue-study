@@ -88,8 +88,8 @@ export default {
   },
   computed: {
     plugins() {
-      const xScaleLabel = this.xUnitLabel
-      const yScaleLabel = this.yUnitLabel
+      const xScaleLabel = "x軸"
+      const yScaleLabel = "y軸"
       return [
         {
           id: "scale-label",
@@ -102,7 +102,7 @@ export default {
             ctx.fillText(
               xScaleLabel,
               chart.chart.width - 25,
-              chart.chart.height - 10
+              chart.chart.height - 5
             )
             ctx.restore()
           }
