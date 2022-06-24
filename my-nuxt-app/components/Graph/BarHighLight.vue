@@ -170,10 +170,7 @@ export default {
           yAxes: [
             {
               ticks: {
-                maxRotation: 0,
-                callback: function(value, idx) {
-                  return `${value}${yUnitLabel}`
-                }
+                maxRotation: 0
               }
             }
           ]
