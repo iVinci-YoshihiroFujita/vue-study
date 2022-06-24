@@ -39,6 +39,7 @@ module.exports = {
       }],
       "object-curly-spacing": ["error", "always"],
       "comma-dangle": ["error", "never"],
+      "no-unused-vars": "off",
 
       // eslint-plugin-vue rules
       "vue/attribute-hyphenation": ["error", "never"]
