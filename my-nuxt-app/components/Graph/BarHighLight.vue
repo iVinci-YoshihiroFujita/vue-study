@@ -71,7 +71,7 @@ export default {
         { key: "人", label: "人数" },
         { key: "頭", label: "動物１" },
         { key: "羽", label: "動物２" },
-        { key: "匹", label: "動物２" },
+        { key: "匹", label: "動物３" },
         { key: "バグ", label: "欠陥" },
         { key: "涙", label: "優しさ" },
         { key: "ビットコイン", label: "リスク" },
