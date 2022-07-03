@@ -31,6 +31,7 @@ import StackedBar from "~/components/Graph/StackedBar"
 import BarHighLight from "~/components/Graph/BarHighLight"
 import BarBackgroundPainted from "~/components/Graph/BarBackgroundPainted"
 import DashedBar from "~/components/Graph/BarDashedBorder"
+import BarLabelCustomized from "~/components/Graph/BarLabelCustomized"
 
 export default {
   name: "ChartIndex",
@@ -40,7 +41,8 @@ export default {
     StackedBar,
     BarHighLight,
     BarBackgroundPainted,
-    DashedBar
+    DashedBar,
+    BarLabelCustomized
   },
   data() {
     return {
@@ -49,7 +51,8 @@ export default {
         { key: "StackedBar", label: "積み上げ棒グラフ" },
         { key: "BarHighLight", label: "クリック時にハイライトする棒グラフ" },
         { key: "BarBackgroundPainted", label: "特定の範囲の背景が塗られている棒グラフ" },
-        { key: "DashedBar", label: "波線で囲まれた棒グラフ" }
+        { key: "DashedBar", label: "波線で囲まれた棒グラフ" },
+        { key: "BarLabelCustomized", label: "ラベルをカスタマイズしたグラフ" }
       ],
       selectedGraph: "Bar"
     }

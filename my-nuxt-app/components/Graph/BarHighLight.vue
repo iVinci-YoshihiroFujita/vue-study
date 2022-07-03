@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="randomize ">
+    <div class="randomize">
       <button
         class="btn clickable"
         @click.prevent="onClickRandomize"
@@ -122,6 +122,7 @@ export default {
     },
     xUnitLabel() {
       this.chartOptions = this.makeChartOptions()
+      // 下のコメントアウトを外すと単位の変更が再描画により反映される
       // this.flip = !this.flip
     },
     yUnitLabel() {}
