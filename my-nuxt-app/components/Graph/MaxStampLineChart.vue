@@ -98,7 +98,6 @@ export default {
                 const stampHeight = 30
                 const x = _view.x - stampWidth / 2
                 const y = _view.y - stampHeight
-                console.log("idx: x, y", idx, x, y)
                 ctx.drawImage(crown, x, y, stampWidth, stampHeight)
               }
             })
