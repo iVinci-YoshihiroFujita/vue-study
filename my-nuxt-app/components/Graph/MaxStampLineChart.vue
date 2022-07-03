@@ -4,7 +4,6 @@
       :chartData="chartData"
       :options="chartOptions"
       :plugins="plugins"
-      :flip="flip"
     />
   </div>
 </template>
@@ -111,11 +110,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.randomize {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-</style>

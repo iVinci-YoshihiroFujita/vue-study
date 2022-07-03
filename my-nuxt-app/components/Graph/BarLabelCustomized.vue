@@ -1,13 +1,5 @@
 <template>
   <div>
-    <div class="randomize">
-      <button
-        class="btn clickable"
-        @click.prevent="onClickRandomize"
-      >
-        <span class="ft_15">Randomize</span>
-      </button>
-    </div>
     <BarChart
       :chartData="chartData"
       :options="chartOptions"
@@ -81,6 +73,12 @@ export default {
       return {
         responsive: true,
         maintainAspectRatio: false,
+        legend: false,
+        layout: {
+          padding: {
+            top: 30
+          }
+        },
         scales: {
           xAxes: [
             {
@@ -106,11 +104,6 @@ export default {
           ]
         }
       }
-    },
-    onClickRandomize() {
-      const dataLength = Math.floor(Math.random() * 100)
-      this.chartData = this.makeChartData(dataLength)
-      this.chartOptions = this.makeChartOptions()
     }
   }
 }
