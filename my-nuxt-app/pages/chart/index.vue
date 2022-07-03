@@ -32,6 +32,7 @@ import BarHighLight from "~/components/Graph/BarHighLight"
 import BarBackgroundPainted from "~/components/Graph/BarBackgroundPainted"
 import DashedBar from "~/components/Graph/BarDashedBorder"
 import BarLabelCustomized from "~/components/Graph/BarLabelCustomized"
+import MaxStampLineChart from "~/components/Graph/MaxStampLineChart"
 
 export default {
   name: "ChartIndex",
@@ -42,7 +43,8 @@ export default {
     BarHighLight,
     BarBackgroundPainted,
     DashedBar,
-    BarLabelCustomized
+    BarLabelCustomized,
+    MaxStampLineChart
   },
   data() {
     return {
@@ -52,7 +54,8 @@ export default {
         { key: "BarHighLight", label: "クリック時にハイライトする棒グラフ" },
         { key: "BarBackgroundPainted", label: "特定の範囲の背景が塗られている棒グラフ" },
         { key: "DashedBar", label: "波線で囲まれた棒グラフ" },
-        { key: "BarLabelCustomized", label: "ラベルをカスタマイズしたグラフ" }
+        { key: "BarLabelCustomized", label: "ラベルをカスタマイズしたグラフ" },
+        { key: "MaxStampLineChart", label: "最大値のプロットの上にスタンプのあるグラフ" }
       ],
       selectedGraph: "Bar"
     }
