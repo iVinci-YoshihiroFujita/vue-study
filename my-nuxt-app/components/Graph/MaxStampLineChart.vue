@@ -44,7 +44,6 @@ export default {
 
         // 最大値の配列位置を取得。より大きな最大値が見つかった場合は、初期化して詰め直す
         if (max == null || max < value) {
-          console.log("max", max)
           max = value
           idxes = []
           idxes.push(i)
